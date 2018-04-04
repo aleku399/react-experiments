@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "module": "commonjs",
-      "target": "es5",
+      "target": "es3",
       "jsx": "react",
       "sourceMap": false,
       "strict": true,
@@ -12,6 +12,7 @@
       "noImplicitAny": false,
       "noUnusedLocals": true,
       "rootDir": "src",
+      "outDir": "build",
       "removeComments": true
     },
     "exclude": [

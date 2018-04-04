@@ -9,13 +9,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.(ts|tsx)(\?[^?]*)?$/,
                 loaders: 'ts-loader'
             }
         ]
     },
     output: {
-        filename: 'transformed.js',
+        filename: 'dist.js',
         path: path.resolve(__dirname, './build')
     }
 };
