@@ -1,16 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { colorListItems } from './component/palette';
-
-const colors = ['#393E41', '#E94F37', '#1C89BF', '#A1D363',
-'#85FFC7', '#297373', '#FF8552', '#A40E4C'];
+import { MyApp } from './TodoApp/app';
 
 class List extends React.Component {
     public render() {
         return (
-            <ul>
-                {colorListItems(colors)}
-            </ul>
+            <div>
+              <MyApp />
+            </div>
         );
     }
 }
