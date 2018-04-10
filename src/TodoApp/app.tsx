@@ -2,14 +2,14 @@ import * as React from 'react';
 import {ListedItem, TodoItem} from './list';
 import data from './data';
 
-export class MyApp extends React.Component {
-    public state: {
-        title: string;
-        list: TodoItem[];
-        term: '';
+interface State {
+    title: string;
+    list: TodoItem[];
+    term: string;
 
-    };
-    private _item: any;
+}
+export class MyApp extends React.Component<{}, State> {
+    private inputElm: HTMLInputElement;
     constructor(props) {
         super(props);
         this.state = {
@@ -23,8 +23,8 @@ export class MyApp extends React.Component {
         this.markCompleted = this.markCompleted.bind(this);
         this.showCompleted = this.showCompleted.bind(this);
     }
-    public handleClick(e) {
-        const item = this._item.value;
+    public handleClick(event) {
+        const item = this.inputElm.value;
         const arrList = this.state.list;
         if (item !== '') {
             arrList.unshift({
@@ -37,7 +37,7 @@ export class MyApp extends React.Component {
                 list: arrList
             });
         }
-        e.preventDefault();
+        event.preventDefault();
     }
     public clearInput(e) {
         this.setState({
@@ -83,7 +83,7 @@ export class MyApp extends React.Component {
                         value={this.state.term}
                         onChange={this.clearInput}
                         placeholder="enter task"
-                        ref={input => this._item = input}
+                        ref={(input: HTMLInputElement) => this.inputElm = input}
                     />
                     <button
                             className="button"
@@ -94,7 +94,7 @@ export class MyApp extends React.Component {
                     <button className="completed" onClick={this.showCompleted}>All</button>
                 </form>
                 <ListedItem
-                 delete={this.deleteClick}
+                 deleteFn={this.deleteClick}
                  toDoList={this.state.list}
                  itemCompleted={this.markCompleted}
                 />

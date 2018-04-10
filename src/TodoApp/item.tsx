@@ -14,7 +14,7 @@ export class TodoItem extends React.Component<Props> {
         this.markCompleted = this.markCompleted.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
     }
-    public markCompleted(e) {
+    public markCompleted() {
         this.props.itemCompleted(this.props.id);
     }
     public deleteItem(e) {
