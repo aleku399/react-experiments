@@ -2,10 +2,10 @@ import * as React from 'react';
 import {Collapse} from './collapse';
 
 interface Contact {
-name: string;
-region: string;
-gender: string;
-surname: string;
+    name: string;
+    region: string;
+    gender: string;
+    surname: string;
 }
 export interface State {
     contacts: Contact[];
