@@ -10,7 +10,8 @@ surname: string;
 export interface State {
     contacts: Array<{name: string, region: string, gender: string}>;
 }
-export class App extends React.Component<State> {
+// the first type paremeter is always the Props type, in case its not available you supply {}
+export class App extends React.Component<{}, State> {
     constructor(props) {
         super(props);
         this.state = ({
