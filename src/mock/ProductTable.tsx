@@ -12,7 +12,7 @@ export class ProductTable extends React.Component<Props> {
         const arrData: any = [];
         let lastCategory = '';
         this.props.data.forEach( (product: Row) => {
-            if (product.name.indexOf(this.props.filterText) === -1) {
+            if (product.name.toLowerCase().indexOf(this.props.filterText) === -1) {
                 return;
               }
             if (this.props.inStockOnly && !product.stocked) {

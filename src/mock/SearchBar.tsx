@@ -16,7 +16,7 @@ export class SearchBar extends React.Component<Props> {
         this.props.handleFilterText(event.target.value);
     }
     public onChecked(event) {
-        this.props.handleChecked(event.checked.value);
+        this.props.handleChecked(event.target.checked);
     }
     public render() {
         return ( <div>

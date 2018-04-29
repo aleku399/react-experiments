@@ -1,13 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { FilterableProductTable } from './mock/FilterableProductTable';
-import products from './mock/data';
+import { MyApp } from './TodoApp/app';
 
 class List extends React.Component {
     public render() {
         return (
             <div>
-              <FilterableProductTable data={products}/>
+              <MyApp />
             </div>
         );
     }

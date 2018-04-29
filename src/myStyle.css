@@ -6,10 +6,11 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .box{
+    border: 1px solid green;
     display: flex;
     justify-content: center;
     flex-direction:  column;
-   
+    box-sizing: border-box;
 }
 
 .title{
@@ -21,7 +22,10 @@ h1 {
     color: rgba(175, 47, 47, 0.15);
     margin: 0 auto;
 }
-
+.form {
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
 .todo{
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -30,16 +34,15 @@ h1 {
     padding: 16px 16px 16px 60px;
     color:  #55595c;
     opacity: 0.3;
-    width: 165px;    
+    width: 165px;
 }
 .todo:focus {
     border: 1px solid red;
     outline: none;
 }
 .myUl{
-    margin-top: 10px;
     padding: 0;
-    
+    margin: 0 auto;
 }
 .button {
     background-color: #0275d8;
@@ -72,7 +75,6 @@ h1 {
     transition: 0.2s;
     user-select: none;
     width: 250px;
-    margin: 0  auto;
     margin-bottom: 15px;
     border-radius: 5px;
 }
@@ -93,7 +95,6 @@ h1 {
     transition: 0.2s;
     user-select: none;
     width: 250px;
-    margin: 0  auto;
     margin-bottom: 15px;
     border-radius: 5px;
 }
@@ -115,4 +116,9 @@ h1 {
     background-color: white;
     filter: "drop-shadow(0px 0px 5px #666)"
 }
-
+.panelShow {
+    display: block;
+}
+.panelNot {
+    display: none;
+}

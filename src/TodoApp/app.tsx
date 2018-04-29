@@ -76,7 +76,7 @@ export class MyApp extends React.Component<{}, State> {
         return(
             <div className="box">
                 <h1 className="title">{this.state.title}</h1>
-                <form onSubmit={this.handleClick}>
+                <form onSubmit={this.handleClick} className="form">
                     <input
                         className="todo"
                         type="text"
@@ -91,7 +91,6 @@ export class MyApp extends React.Component<{}, State> {
                             disabled={!this.state.term}
                     >Add
                     </button>
-                    <button className="completed" onClick={this.showCompleted}>All</button>
                 </form>
                 <ListedItem
                  deleteFn={this.deleteClick}

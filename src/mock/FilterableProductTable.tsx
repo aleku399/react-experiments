@@ -18,14 +18,14 @@ export class FilterableProductTable extends React.Component<{data: Row[]}, State
         this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
         this.handleInStockChange = this.handleInStockChange.bind(this);
     }
-    public handleFilterTextChange(filterText) {
+    public handleFilterTextChange(e) {
         this.setState({
-          filterText
+          filterText: e.target.value
         });
       }
-    public handleInStockChange(inStockOnly) {
+    public handleInStockChange(e) {
         this.setState({
-          inStockOnly
+          inStockOnly: e.target.checked
         });
       }
     public render() {
