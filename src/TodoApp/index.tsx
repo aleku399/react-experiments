@@ -1,22 +1,29 @@
 import * as React from 'react';
 import {ListedItem, TodoItem} from './list';
-import data from './data';
+import { connect } from 'react-redux';
+import {addTodo, toggleTodo} from '../actions';
+// import data from './data';
 
+interface Props {
+    addTodo: any;
+    toggleTodo: any;
+}
 interface State {
     title: string;
     list: TodoItem[];
     term: string;
 
 }
-export class MyApp extends React.Component<{}, State> {
-    private inputElm: HTMLInputElement;
+class App extends React.Component<Props, State> {
+    private inputElm: any;
     constructor(props) {
         super(props);
         this.state = {
             title: 'todos',
-            list: data,
+            list: [],
             term: '',
         };
+        this.inputElm = '';
         this.handleClick = this.handleClick.bind(this);
         this.deleteClick = this.deleteClick.bind(this);
         this.clearInput = this.clearInput.bind(this);
@@ -25,17 +32,18 @@ export class MyApp extends React.Component<{}, State> {
     }
     public handleClick(event) {
         const item = this.inputElm.value;
-        const arrList = this.state.list;
+        // const arrList = this.state.list;
         if (item !== '') {
-            arrList.unshift({
-                text: item,
-                id: Date.now(),
-                done: false
-            });
-            this.setState({
-                term: '',
-                list: arrList
-            });
+            // arrList.unshift({
+            //     text: item,
+            //     id: Date.now(),
+            //     done: false
+            // });
+            this.props.addTodo(item);
+            // this.setState({
+            //     term: '',
+            //     list: arrList
+            // });
         }
         event.preventDefault();
     }
@@ -54,14 +62,15 @@ export class MyApp extends React.Component<{}, State> {
         });
     }
     public markCompleted(id) {
-        const arrList = this.state.list;
-        const newList = arrList.map((item) => {
-             if (item.id === id ) item.done = !item.done;
-             return item;
-        });
-        this.setState({
-            list: newList
-        });
+        this.props.toggleTodo(id);
+        // const arrList = this.state.list;
+        // const newList = arrList.map((item) => {
+        //      if (item.id === id ) item.done = !item.done;
+        //      return item;
+        // });
+        // this.setState({
+        //     list: newList
+        // });
     }
     public showCompleted(id) {
         const arrList = this.state.list;
@@ -101,3 +110,7 @@ export class MyApp extends React.Component<{}, State> {
         );
     }
 }
+const mapStateToProps = state => ({
+    todos: state
+  });
+export default connect(mapStateToProps, { addTodo, toggleTodo })(App);

@@ -21,9 +21,8 @@ export class TodoItem extends React.Component<Props> {
         this.props.delete(this.props.id);
     }
     public render() {
-        const itemClass = 'check' + (!this.props.completed ? 'undone' : 'done');
         return(
-            <li className={itemClass}>
+            <li className="check" style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}>
                 <label>
                     <input type="checkbox" className="check-input" onChange={this.markCompleted}/>
                     {this.props.text}

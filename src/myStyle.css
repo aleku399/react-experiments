@@ -122,3 +122,73 @@ h1 {
 .panelNot {
     display: none;
 }
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+fieldset {
+    border-style: double;
+    border-color: #4d94ff;
+    max-width: 400px;
+	padding: 0.3em 3em;
+	text-align: center;
+}
+fieldset:nth-of-type(1) {
+    margin-top: 20px;
+    padding-top: 2em;
+    border-width: 4px 4px 0 4px; 
+}
+fieldset:nth-of-type(2) {
+    padding-bottom: 2em;
+    margin-bottom: 20px;
+    border-width: 0 4px 4px 4px; 
+}
+legend {
+    display: none;
+    border-style: solid;
+    border-color: #4d94ff;
+    border-width: 0 2px;
+    color: #4d94ff;
+    padding: 0.5em 0.8em 0.3em 0.8em;
+    text-align: left;   
+}
+input {
+    border-width: 0 0 2px 0;
+    border-color: #4d94ff;
+    background-color: 	#00FFFF;
+    width: 200px;
+	font-size: 24px;
+	font-family: sans-serif;
+}
+input:focus {
+    outline: none;
+}
+select {
+    cursor: pointer;
+    appearance: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-left: 1em;
+    padding: 0.2em 0.1em 0.1em 0.3em;
+}
+select:focus {
+    outline: none;
+    outline-style: none;
+	text-shadow: 0 0 0 #000;
+}
+.Board {
+    position: relative;
+    margin: 0 auto;
+    background-color: #000;
+    background-image:
+    linear-gradient(#333 1px, transparent 1px),
+    linear-gradient(90deg, #333 1px, transparent 1px);
+}
+.Cell {
+    background: #ccc;
+    position: absolute;
+}
